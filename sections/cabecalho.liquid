@@ -1,0 +1,109 @@
+<style>
+  #cabecalho {
+    display: grid;
+    grid-template-rows: repeat(2, max-content);
+    gap: 2rem;
+    padding: 2rem 6vw;
+    background-color: {{ section.settings.background_color | default: '#ffffff' }};
+  }
+
+  #cabecalho > * {
+    color: {{ section.settings.text_color | default: '#000000' }} !important;
+  }
+
+  #cabecalho > div,
+  #cabecalho > div > picture {
+    display: grid;
+  }
+
+  #cabecalho > div > picture > img {
+    object-fit: contain;
+  }
+
+  #cabecalho > ul {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: max-content;
+    list-style-type: none;
+    gap: 1rem;
+  }
+
+  #cabecalho > ul > li {
+    display: grid;
+    padding: 0;
+    margin: 0;
+  }
+
+  #cabecalho > ul > li > a {
+    padding: 1rem;
+    border-radius: 2rem;
+    border: 1px solid {{ section.settings.text_color | default: '#000000' }};
+    text-decoration: none;
+  }
+</style>
+
+<header id="cabecalho">
+  <div>
+    {% if section.settings.logo_desktop != blank or section.settings.logo_mobile != blank %}
+      <picture>
+        {% if section.settings.logo_mobile != blank %}
+          <source media="(max-width: 768px)" srcset="{{ section.settings.logo_mobile | img_url: 'master' }}">
+        {% endif %}
+        <img src="{{ section.settings.logo_desktop | img_url: 'master' }}" alt="{{ shop.name }}">
+      </picture>
+    {% else %}
+      <h1>{{ shop.name }}</h1>
+    {% endif %}
+  </div>
+
+  {% if section.settings.menu %}
+    <ul>
+      {% for link in section.settings.menu.links %}
+        <li>
+          <a href="{{ link.url }}">{{ link.title }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+</header>
+
+{% schema %}
+{
+  "name": "Cabeçalho",
+  "limit": 1,
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "logo_desktop",
+      "label": "Logo (desktop)"
+    },
+    {
+      "type": "image_picker",
+      "id": "logo_mobile",
+      "label": "Logo (mobile)"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Cor de fundo",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Cor do texto",
+      "default": "#000000"
+    },
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Menu cabeçalho"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Cabeçalho"
+    }
+  ]
+}
+{% endschema %}
