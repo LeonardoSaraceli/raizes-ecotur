@@ -55,58 +55,47 @@
         "description": "<p>Explore os passeios mais frequentados da cidade maravilhosa</p>"
       }
     },
-    "bloco_de_passeios_RmgDq9": {
-      "type": "bloco-de-passeios",
+    "bloco_de_categorias_RdPgpe": {
+      "type": "bloco-de-categorias",
       "blocks": {
-        "products_EbLYcz": {
-          "type": "Products",
+        "collections_nHBpaB": {
+          "type": "Collections",
           "settings": {
-            "product": "pedra-da-gavea"
+            "collection": "barco"
           }
         },
-        "products_jMybnr": {
-          "type": "Products",
+        "collections_44AAbQ": {
+          "type": "Collections",
           "settings": {
-            "product": "pedra-da-tartaruga"
+            "collection": "rapel"
           }
         },
-        "products_iUrJ3G": {
-          "type": "Products",
+        "collections_pKpXey": {
+          "type": "Collections",
           "settings": {
-            "product": "morro-dois-irmaos"
+            "collection": "travessia"
           }
         },
-        "products_9XHRYG": {
-          "type": "Products",
+        "collections_9jbGYY": {
+          "type": "Collections",
           "settings": {
-            "product": "pico-da-tijuca"
-          }
-        },
-        "products_NHmVbQ": {
-          "type": "Products",
-          "settings": {
-            "product": "pedra-do-telegrafo"
+            "collection": "trilha"
           }
         }
       },
       "block_order": [
-        "products_EbLYcz",
-        "products_jMybnr",
-        "products_iUrJ3G",
-        "products_9XHRYG",
-        "products_NHmVbQ"
+        "collections_nHBpaB",
+        "collections_44AAbQ",
+        "collections_pKpXey",
+        "collections_9jbGYY"
       ],
       "settings": {
-        "title": "Rio de Janeiro",
-        "description": "<p>Explore os passeios mais frequentados da cidade maravilhosa</p>"
+        "title": "Navegue por tipo de passeio"
       }
     }
   },
   "order": [
-<<<<<<< HEAD
-    "featured_collection",
-=======
->>>>>>> 82655435adca1d33d133dca0d93b6966ee66ad78
+    "bloco_de_categorias_RdPgpe",
     "bloco_de_passeios_RmgDq9"
   ]
 }
