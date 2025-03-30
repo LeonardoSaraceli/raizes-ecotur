@@ -2,8 +2,8 @@
   #bloco-de-categorias {
     display: grid;
     grid-template-rows: repeat(2, max-content);
-    gap: 1rem;
-    padding: 2rem 16dvw;
+    gap: 2rem;
+    padding: 2rem 14dvw;
   }
 
   #bloco-de-categorias > h1 {
@@ -16,16 +16,19 @@
   #bloco-de-categorias > ul {
     display: grid;
     grid-auto-flow: column;
-    grid-auto-columns: max-content;
+    grid-auto-columns: minmax(260px, 1fr);
     gap: 1rem;
     padding: 0;
     margin: 0;
+    overflow-x: auto;
+    overflow-y: hidden;
   }
 
   #bloco-de-categorias > ul > li {
     display: grid;
     padding: 0;
     margin: 0;
+    scroll-snap-align: start;
   }
 
   #bloco-de-categorias > ul > li > a {
@@ -44,7 +47,9 @@
   #bloco-de-categorias > ul > li > a > img {
     border-radius: 1rem;
     object-fit: cover;
-    min-height: 210px;
+    max-width: 260px;
+    width: 100%;
+    height: 210px;
   }
 </style>
 
@@ -59,12 +64,11 @@
         <li>
           <a href="{{ block.settings.collection.url }}">
             <img
-              src="{{ block.settings.collection.images.first | image_url: height: 210 }}"
+              src="{{ block.settings.collection.image | image_url: height: 210 }}"
               alt="{{ block.settings.collection.title }}"
               width="auto"
               height="210"
             >
-
             {{- block.settings.collection.title -}}
           </a>
         </li>
