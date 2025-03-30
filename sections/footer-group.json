@@ -17,13 +17,40 @@
         "products_qnwKRa": {
           "type": "Products",
           "settings": {
-            "image": "shopify://shop_images/Nebulosa_Pedra_da_Gavea.jpg",
             "product": "pedra-da-gavea"
+          }
+        },
+        "products_wBVEy9": {
+          "type": "Products",
+          "settings": {
+            "product": "pedra-da-tartaruga"
+          }
+        },
+        "products_yYmPj6": {
+          "type": "Products",
+          "settings": {
+            "product": "morro-dois-irmaos"
+          }
+        },
+        "products_BkwVbF": {
+          "type": "Products",
+          "settings": {
+            "product": "pico-da-tijuca"
+          }
+        },
+        "products_JT4byz": {
+          "type": "Products",
+          "settings": {
+            "product": "pedra-do-telegrafo"
           }
         }
       },
       "block_order": [
-        "products_qnwKRa"
+        "products_qnwKRa",
+        "products_wBVEy9",
+        "products_yYmPj6",
+        "products_BkwVbF",
+        "products_JT4byz"
       ],
       "settings": {
         "title": "Rio de Janeiro",
