@@ -11,6 +11,25 @@
   "name": "t:sections.footer.name",
   "type": "footer",
   "sections": {
+    "rodape_ygcEjd": {
+      "type": "rodape",
+      "blocks": {
+        "parceiros_rF66Ty": {
+          "type": "Parceiros",
+          "settings": {
+            "title": "Cadastur",
+            "image": "shopify://shop_images/cadastur.png",
+            "link": "https://cadastur.turismo.gov.br/hotsite/"
+          }
+        }
+      },
+      "block_order": [
+        "parceiros_rF66Ty"
+      ],
+      "settings": {
+        "description": ""
+      }
+    },
     "footer": {
       "type": "footer",
       "disabled": true,
@@ -31,6 +50,7 @@
     }
   },
   "order": [
+    "rodape_ygcEjd",
     "footer"
   ]
 }
