@@ -9,33 +9,50 @@
  */
 {
   "sections": {
-    "featured_collection": {
-      "type": "featured-collection",
-      "disabled": true,
+    "bloco_de_passeios_RmgDq9": {
+      "type": "bloco-de-passeios",
+      "blocks": {
+        "products_EbLYcz": {
+          "type": "Products",
+          "settings": {
+            "product": "pedra-da-gavea"
+          }
+        },
+        "products_jMybnr": {
+          "type": "Products",
+          "settings": {
+            "product": "pedra-da-tartaruga"
+          }
+        },
+        "products_iUrJ3G": {
+          "type": "Products",
+          "settings": {
+            "product": "morro-dois-irmaos"
+          }
+        },
+        "products_9XHRYG": {
+          "type": "Products",
+          "settings": {
+            "product": "pico-da-tijuca"
+          }
+        },
+        "products_NHmVbQ": {
+          "type": "Products",
+          "settings": {
+            "product": "pedra-do-telegrafo"
+          }
+        }
+      },
+      "block_order": [
+        "products_EbLYcz",
+        "products_jMybnr",
+        "products_iUrJ3G",
+        "products_9XHRYG",
+        "products_NHmVbQ"
+      ],
       "settings": {
-        "collection": "all",
-        "products_to_show": 8,
-        "title": "Featured products",
-        "heading_size": "h2",
-        "description": "",
-        "show_description": false,
-        "description_style": "body",
-        "columns_desktop": 4,
-        "enable_desktop_slider": false,
-        "full_width": false,
-        "show_view_all": true,
-        "view_all_style": "solid",
-        "color_scheme": "scheme-1",
-        "image_ratio": "adapt",
-        "image_shape": "default",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": false,
-        "quick_add": "none",
-        "columns_mobile": "2",
-        "swipe_on_mobile": false,
-        "padding_top": 44,
-        "padding_bottom": 36
+        "title": "Rio de Janeiro",
+        "description": "<p>Explore os passeios mais frequentados da cidade maravilhosa</p>"
       }
     },
     "bloco_de_passeios_RmgDq9": {
@@ -86,7 +103,10 @@
     }
   },
   "order": [
+<<<<<<< HEAD
     "featured_collection",
+=======
+>>>>>>> 82655435adca1d33d133dca0d93b6966ee66ad78
     "bloco_de_passeios_RmgDq9"
   ]
 }
