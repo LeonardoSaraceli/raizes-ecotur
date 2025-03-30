@@ -11,6 +11,25 @@
   "name": "t:sections.footer.name",
   "type": "footer",
   "sections": {
+    "bloco_de_passeios_ExGwLF": {
+      "type": "bloco-de-passeios",
+      "blocks": {
+        "products_qnwKRa": {
+          "type": "Products",
+          "settings": {
+            "image": "shopify://shop_images/Nebulosa_Pedra_da_Gavea.jpg",
+            "product": ""
+          }
+        }
+      },
+      "block_order": [
+        "products_qnwKRa"
+      ],
+      "settings": {
+        "title": "Rio de Janeiro",
+        "description": "<p>Escolhas mais populares para viajantes</p>"
+      }
+    },
     "footer": {
       "type": "footer",
       "disabled": true,
@@ -31,6 +50,7 @@
     }
   },
   "order": [
+    "bloco_de_passeios_ExGwLF",
     "footer"
   ]
 }
