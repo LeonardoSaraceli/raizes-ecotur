@@ -1,0 +1,107 @@
+<style>
+  #bloco-de-categorias {
+    display: grid;
+    grid-template-rows: repeat(2, max-content);
+    gap: 1rem;
+    padding: 2rem 16dvw;
+  }
+
+  #bloco-de-categorias > h1 {
+    font-size: 24px;
+    font-weight: bold;
+    padding: 0;
+    margin: 0;
+  }
+
+  #bloco-de-categorias > ul {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: max-content;
+    gap: 1rem;
+    padding: 0;
+    margin: 0;
+  }
+
+  #bloco-de-categorias > ul > li {
+    display: grid;
+    padding: 0;
+    margin: 0;
+  }
+
+  #bloco-de-categorias > ul > li > a {
+    display: grid;
+    grid-template-rows: repeat(2, max-content);
+    gap: 1rem;
+    width: 100%;
+    height: 100%;
+    color: black;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  #bloco-de-categorias > ul > li > a > img {
+    border-radius: 1rem;
+    object-fit: cover;
+    min-height: 210px;
+  }
+</style>
+
+<section id="bloco-de-categorias">
+  {% unless section.settings.title == blank %}
+    <h1>{{ section.settings.title }}</h1>
+  {% endunless %}
+
+  {% unless section.blocks.size == 0 %}
+    <ul>
+      {% for block in section.blocks %}
+        <li>
+          <a href="{{ block.settings.collection.url }}">
+            <img
+              src="{{ block.settings.collection.images.first | image_url: height: 210 }}"
+              alt="{{ block.settings.collection.title }}"
+              width="auto"
+              height="210"
+            >
+
+            {{- block.settings.collection.title -}}
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  {% endunless %}
+</section>
+
+{% schema %}
+{
+  "name": "Bloco de categorias",
+  "limit": 1,
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Título do bloco"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "Collections",
+      "name": "coleção",
+      "limit": 4,
+      "settings": [
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Coleção"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Bloco de categorias"
+    }
+  ]
+}
+{% endschema %}
