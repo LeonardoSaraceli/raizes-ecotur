@@ -145,8 +145,7 @@
           "logo_desktop": "shopify://shop_images/logo_desktop.png",
           "logo_mobile": "shopify://shop_images/logo_mobile.png",
           "background_color": "#eedebd",
-          "text_color": "#553e12",
-          "menu": "menu-cabecalho"
+          "text_color": "#553e12"
         }
       }
     },
