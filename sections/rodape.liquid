@@ -1,0 +1,151 @@
+<style>
+  #rodape {
+    display: grid;
+    grid-template-rows: repeat(3, max-content);
+    gap: 1rem;
+    padding: 2rem 14dvw;
+    background-color: #f5f5f5;
+    margin-top: 2rem;
+  }
+
+  #rodape > nav {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: max-content;
+    gap: 1rem;
+    padding: 0 1rem;
+  }
+
+  #rodape > nav > span {
+    font-size: 16px;
+    text-transform: uppercase;
+    width: 52px;
+    height: 48px;
+    text-align: center;
+    display: grid;
+    align-items: center;
+    margin: 0;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 0.5rem;
+    transition: all 0.1s ease;
+  }
+
+  #rodape > nav > span:hover {
+    background-color: #ffffff6b;
+  }
+
+  #rodape > #rodape-breaker {
+    height: 1px;
+    width: 100%;
+    background-color: #e7e7e7;
+  }
+
+  #rodape > #rodape-ultimo-bloco {
+    display: grid;
+    grid-template-rows: repeat(2, max-content);
+    gap: 1rem;
+  }
+
+  #rodape > #rodape-ultimo-bloco > div {
+    display: grid;
+    grid-template-rows: repeat(2, max-content);
+    justify-items: center;
+  }
+
+  #rodape > #rodape-ultimo-bloco > ul {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: max-content;
+    gap: 2rem;
+    align-items: center;
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const text = document.getElementById('rodape-copyright');
+
+    if (text) {
+      text.innerHTML = `Copyright &#169; or &copy; ${new Date.getFullYear()} Raízes Ecotur. Todos os direitos reservados.`;
+    }
+  });
+</script>
+
+<footer id="rodape">
+  <nav>
+    <span>PT</span>
+    <span>BRL</span>
+  </nav>
+
+  <div id="rodape-breaker"></div>
+
+  <div id="rodape-ultimo-bloco">
+    <div>
+      {{ section.settings.description }}
+
+      <span id="rodape-copyright"></span>
+    </div>
+
+    {% unless section.blocks.size == 0 %}
+      <ul>
+        {% for block in section.blocks %}
+          <li>
+            <a href="{{ block.settings.link }}">
+              <img
+                src="{{ block.settings.image | image_url: width: 100 }}"
+                alt="{{ block.settings.title }}"
+                title="{{ block.settings.title }}"
+                width="100"
+                height="auto"
+              >
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    {% endunless %}
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "Rodapé",
+  "limit": 1,
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Descrição do rodapé"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "Parceiros",
+      "name": "Parceiros",
+      "limit": 5,
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Nome do parceiro"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Imagem do parceiro"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link do parceiro"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Rodapé"
+    }
+  ]
+}
+{% endschema %}
