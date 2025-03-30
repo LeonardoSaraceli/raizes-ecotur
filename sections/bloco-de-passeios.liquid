@@ -50,9 +50,16 @@
     border-radius: 1rem;
     font-size: 21px;
     font-weight: bold;
-    background-size: cover;
+    background-size: 100%;
     background-position: center;
+    background-repeat: no-repeat;
     min-height: 265px;
+    cursor: pointer;
+    transition: background-size 0.3s ease;
+  }
+
+  #bloco_de_passeios > ul > li > a:hover {
+    background-size: 110%;
   }
 </style>
 
@@ -85,6 +92,7 @@
         {% for block in section.blocks offset: 2 %}
           <li>
             <a
+              href="{{ block.settings.product.url }}"
               {% if block.settings.image %}
                 style="background-image: url('{{ block.settings.image | image_url: height: 265 }}');"
               {% endif %}
